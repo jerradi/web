@@ -28,6 +28,12 @@ class PublicController{
 	public List<Url> getUrls(){
 		return getRandomList();
 	}
+	
+	@GetMapping("getUs")
+	public Url getUrl(){
+		return new  Url("https://dashboard.heroku.com/apps/firstappli7/deploy/github" , "https://static9.opensubtitles.org/gfx/thumbs/6/6/3/4/5924366.jpg" , "GOT");
+	}
+	
 	public List<Url> getRandomList() {
 		 return  Arrays.asList("7cdd58c2a0,2c5b5f7cdd58", "25716 --- [o-auto-1-exec-2] ", "9-04-15 14:05:33.657  INFO [demo-serv").stream().map(r-> new Url(r, r, r.substring(0, 5))).collect(Collectors.toList());
 	}
